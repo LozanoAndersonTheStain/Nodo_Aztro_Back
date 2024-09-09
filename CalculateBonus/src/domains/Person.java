@@ -7,9 +7,9 @@ public abstract class Person {
     private int age;
     protected String dni;
     protected String address;
-    private double salary;
+    private float salary;
 
-    public Person(String name, String lastName, int age, String dni, String address, double salary) {
+    public Person(String name, String lastName, int age, String dni, String address, float salary) {
 
         if (age < 0) {
             throw new IllegalArgumentException("Age cannot be negative");

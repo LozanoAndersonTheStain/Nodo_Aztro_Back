@@ -4,7 +4,7 @@ import models.salaried.Salaried;
 
 public class Teacher extends Salaried {    
 
-    public Teacher(String name, String lastName, int age, String dni, String address, double salary) {
+    public Teacher(String name, String lastName, int age, String dni, String address, float salary) {
         super(name, lastName, age, dni, address, salary);
     }
 
