@@ -1,8 +1,17 @@
+//Package
+package domain;
+
+//Imports
 import javax.swing.*;
+
+import implement.Operations;
+import model.BasicOperations;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//Class Operation
 public class Operation extends JFrame {
     private JTextField num1Field;
     private JTextField num2Field;
