@@ -12,4 +12,9 @@ public class Volunteer extends Person {
     public String getRole() {
         return "Volunteer";
     }
+
+    @Override
+    public float calculateBonus() {
+        return 0;
+    }
 }

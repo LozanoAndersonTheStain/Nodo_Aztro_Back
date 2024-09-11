@@ -12,4 +12,9 @@ public class AdministrativeStaff extends Salaried {
     public String getRole() {
         return "Administrative Staff";
     }
+
+    @Override
+    public float calculateBonus() {
+        return salary * 0.1f;
+    }
 }

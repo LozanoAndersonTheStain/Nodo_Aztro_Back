@@ -12,4 +12,9 @@ public class Salaried extends Person {
     public String getRole() {
         return "Salaried Employee";
     }
+
+    @Override
+    public float calculateBonus() {
+        return salary * 0.04f;
+    }
 }

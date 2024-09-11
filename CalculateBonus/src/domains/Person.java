@@ -7,7 +7,7 @@ public abstract class Person {
     private int age;
     protected String dni;
     protected String address;
-    private float salary;
+    protected float salary;
 
     public Person(String name, String lastName, int age, String dni, String address, float salary) {
 
@@ -50,5 +50,7 @@ public abstract class Person {
     }
 
     public abstract String getRole(); 
+
+    public abstract float calculateBonus();
 }
 
