@@ -1,25 +1,25 @@
-//Package
+// Package
 package domain;
 
-//Imports
+// Imports
 import implement.Operations;
-import model.BasicOperations;
+import model.OperationsInterface;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.DecimalFormat;
 
-//Class Operation
+// Class Operation
 public class Operation extends JFrame {
     private JTextField num1Field;
     private JTextField num2Field;
     private JLabel resultLabel;
-    private BasicOperations operations;
+    private OperationExecutor operationExecutor;
 
     public Operation() {
-        operations = new Operations();
+        OperationsInterface operations = new Operations();
+        operationExecutor = new OperationExecutor(operations);
 
         setTitle("Calculator");
         setSize(400, 300);
@@ -101,37 +101,8 @@ public class Operation extends JFrame {
         try {
             int num1 = Integer.parseInt(num1Field.getText());
             int num2 = Integer.parseInt(num2Field.getText());
-            int result = 0;
-            double resultDiv = 0;
-
-            DecimalFormat decimalFormat = new DecimalFormat("#.##");
-
-            switch (operation) {
-                case "Sum":
-                    result = operations.Sum(num1, num2);
-                    resultLabel.setText("Result: " + result);
-                    break;
-
-                case "Rest":
-                    result = operations.Rest(num1, num2);
-                    resultLabel.setText("Result: " + result);
-                    break;
-
-                case "Multiplication":
-                    result = operations.multiplication(num1, num2);
-                    resultLabel.setText("Result: " + result);
-                    break;
-
-                case "Divide":
-                    try {
-                        resultDiv = operations.divide(num1, num2);
-                        String resultFormatted = decimalFormat.format(resultDiv);
-                        resultLabel.setText("Result: " + resultFormatted);
-                    } catch (ArithmeticException e) {
-                        resultLabel.setText("Error: " + e.getMessage());
-                    }
-                    break;
-            }
+            String result = operationExecutor.executeOperation(operation, num1, num2);
+            resultLabel.setText("Result: " + result);
         } catch (NumberFormatException e) {
             resultLabel.setText("Please enter a valid number");
         }

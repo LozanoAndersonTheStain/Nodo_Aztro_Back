@@ -1,9 +1,8 @@
 package implement;
 
-import model.BasicOperations;
+import model.OperationsInterface;
 
-public class Operations extends BasicOperations {
-
+public class Operations implements OperationsInterface {
     @Override
     public int Sum(int num1, int num2) {
         return num1 + num2;
