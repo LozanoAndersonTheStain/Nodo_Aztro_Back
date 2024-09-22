@@ -1,0 +1,18 @@
+# Ignorar archivos de entorno
+.env
+
+# Ignorar archivos de compilación de Java
+*.class
+
+# Ignorar directorios de compilación
+/bin/
+/build/
+
+# Ignorar archivos de configuración de IDE
+*.iml
+.idea/
+.vscode/
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
